@@ -17,7 +17,7 @@
 */
 -->
 <resources>
-    <color name="selectedpaint_color">#FF33B5E5</color>
+    <color name="selectedpaint_color">#88888888</color>
     <color name="subpaint_color">#C8FAE680</color>
     <color name="menuarcpaint_color">#8CFFFFFF</color>
 </resources>
