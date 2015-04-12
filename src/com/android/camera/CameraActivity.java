@@ -1249,15 +1249,9 @@ public class CameraActivity extends Activity
     @Override
     public void onResume() {
         // TODO: Handle this in OrientationManager.
-        // Auto-rotate off
-        if (Settings.System.getInt(getContentResolver(),
-                Settings.System.ACCELEROMETER_ROTATION, 0) == 0) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
-            mAutoRotateScreen = false;
-        } else {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
-            mAutoRotateScreen = true;
-        }
+        //Emman does what he wants, Joel lets him
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+        mAutoRotateScreen = true;
 
         UsageStatistics.onEvent(UsageStatistics.COMPONENT_CAMERA,
                 UsageStatistics.ACTION_FOREGROUNDED, this.getClass().getSimpleName());
