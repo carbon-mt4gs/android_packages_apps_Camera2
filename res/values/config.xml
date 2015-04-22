@@ -19,6 +19,10 @@
 <resources>
     <!-- Maximum recording length in milliseconds. 0 means unlimited. -->
     <integer name="max_video_recording_length">0</integer>
+    <!-- Disable face detection on the front camera -->
+    <bool name="noFaceDetectOnFrontCamera">true</bool>
+    <!-- Disable face detection on the rear camera -->
+    <bool name="noFaceDetectOnRearCamera">true</bool>
     <!-- Zero shutter lag mode -->
     <bool name="enableZSL">false</bool>
     <!-- Stay in continuous focus even if touch-to-focus is used
