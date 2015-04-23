@@ -123,6 +123,12 @@ public class CameraUtil {
 
     private static boolean sEnableZSL;
 
+     // Workaround for QC cameras with broken face detection on front camera
+     private static boolean sNoFaceDetectOnFrontCamera;
+ 
+    // Workaround for QC cameras with broken face detection on rear camera
+    private static boolean sNoFaceDetectOnRearCamera;
+
     // Do not change the focus mode when TTF is used
     private static boolean sNoFocusModeChangeForTouch;
 
@@ -234,6 +240,10 @@ public class CameraUtil {
         sImageFileNamer = new ImageFileNamer(
                 context.getString(R.string.image_file_name_format));
         sEnableZSL = context.getResources().getBoolean(R.bool.enableZSL);
+        sNoFaceDetectOnFrontCamera = context.getResources().getBoolean(
+                 R.bool.noFaceDetectOnFrontCamera);
+       sNoFaceDetectOnRearCamera = context.getResources().getBoolean(
+                R.bool.noFaceDetectOnRearCamera);
         sNoFocusModeChangeForTouch = context.getResources().getBoolean(
                 R.bool.useContinuosFocusForTouch);
         sCancelAutoFocusOnPreviewStopped =
@@ -253,6 +263,14 @@ public class CameraUtil {
     public static boolean needSamsungHDRFormat() {
         return sSamsungHDRFormat;
     }
+
+     public static boolean noFaceDetectOnFrontCamera() {
+         return sNoFaceDetectOnFrontCamera;
+     }
+ 
+    public static boolean noFaceDetectOnRearCamera() {
+        return sNoFaceDetectOnRearCamera;
+    } 
 
     public static boolean noFocusModeChangeForTouch() {
         return sNoFocusModeChangeForTouch;
