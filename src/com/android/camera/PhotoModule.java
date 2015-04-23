@@ -856,11 +856,11 @@ public class PhotoModule
         if (mCameraDevice == null) return;
 
          // Workaround for a buggy camera library
-         if (Util.noFaceDetectOnFrontCamera() && info.facing == CameraInfo.CAMERA_FACING_FRONT) {
+         if (CameraUtil.noFaceDetectOnFrontCamera() && info.facing == CameraInfo.CAMERA_FACING_FRONT) {
              return;
          }
  
-        if (Util.noFaceDetectOnRearCamera() && info.facing == CameraInfo.CAMERA_FACING_BACK) {
+        if (CameraUtil.noFaceDetectOnRearCamera() && info.facing == CameraInfo.CAMERA_FACING_BACK) {
             return;
         }
 
