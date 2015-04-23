@@ -855,6 +855,15 @@ public class PhotoModule
     public void startFaceDetection() {
         if (mCameraDevice == null) return;
 
+         // Workaround for a buggy camera library
+         if (Util.noFaceDetectOnFrontCamera() && info.facing == CameraInfo.CAMERA_FACING_FRONT) {
+             return;
+         }
+ 
+        if (Util.noFaceDetectOnRearCamera() && info.facing == CameraInfo.CAMERA_FACING_BACK) {
+            return;
+        }
+
         if (mFaceDetectionEnabled == false
                || mFaceDetectionStarted || mCameraState != IDLE) return;
         if (mParameters.getMaxNumDetectedFaces() > 0) {
