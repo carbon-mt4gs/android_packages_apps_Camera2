@@ -855,6 +855,9 @@ public class PhotoModule
     public void startFaceDetection() {
         if (mCameraDevice == null) return;
 
+        // Declare for workaround
+        CameraInfo info = CameraHolder.instance().getCameraInfo()[mCameraId];
+        
          // Workaround for a buggy camera library
          if (CameraUtil.noFaceDetectOnFrontCamera() && info.facing == CameraInfo.CAMERA_FACING_FRONT) {
              return;
