@@ -871,7 +871,8 @@ public class PhotoModule
                || mFaceDetectionStarted || mCameraState != IDLE) return;
         if (mParameters.getMaxNumDetectedFaces() > 0) {
             mFaceDetectionStarted = true;
-            CameraInfo info = CameraHolder.instance().getCameraInfo()[mCameraId];
+            // Already  defined
+            //CameraInfo info = CameraHolder.instance().getCameraInfo()[mCameraId];
             mUI.onStartFaceDetection(mDisplayOrientation,
                     (info.facing == CameraInfo.CAMERA_FACING_FRONT));
             mCameraDevice.setFaceDetectionCallback(mHandler, mUI);
